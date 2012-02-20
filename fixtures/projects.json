@@ -1,0 +1,66 @@
+[{
+      "id": "1",
+    "name": "Project 1",
+     "rel": {
+         "self": "http://projectlist/fixtures/project1.json",
+         "html": "url...",
+         "revisions": "url..",
+         "tools": "url.."
+     },
+    "lastRevision": {
+        "id": "17",
+        "rev": "81009fe73ef15f278ff5e75228bf31d6793f1f6d",
+        "rel": {
+            "self": "url..",
+            "html": "url...",
+            "reports": "url.."
+        },
+        "status": "success",
+        "created": "date"
+    },
+    "lastSuccessfulBuild": {
+        "id": "17",
+        "rev": "81009fe73ef15f278ff5e75228bf31d6793f1f6d",
+        "rel": {
+            "self": "url..",
+            "html": "url...",
+            "reports": "url.."
+        },
+        "status": "success",
+        "created": "date"
+    },
+    "lastBuildDate": "2012-01-10 11:01:23.719830"
+},
+{
+    "id": "2",
+  "name": "Project 2",
+   "rel": {
+       "self": "http://projectlist/fixtures/project2.json",
+       "html": "url...",
+       "revisions": "url..",
+       "tools": "url.."
+   },
+  "lastRevision": {
+      "id": "15",
+      "rev": "81009fe73ef15f278ff5e75228bf31d6793f1f6d",
+      "rel": {
+          "self": "url..",
+          "html": "url...",
+          "reports": "url.."
+      },
+      "status": "fail",
+      "created": "date"
+  },
+  "lastSuccessfulBuild": {
+      "id": "12",
+      "rev": "81009fe73ef15f278ff5e75228bf31d6793f193f1",
+      "rel": {
+          "self": "url..",
+          "html": "url...",
+          "reports": "url.."
+      },
+      "status": "success",
+      "created": "date"
+  },
+  "lastBuildDate": "2012-01-10 11:01:23.719830"
+}]

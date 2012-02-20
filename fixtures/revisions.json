@@ -1,0 +1,32 @@
+{
+     "id": "17",
+     "project": "1",
+     "rel": {
+         "project": "http://projectlist/projects/1",
+         "self": "http://projectlist/projects/1/revisions/17"},
+     "qualityReports": [
+        {
+           "id": "...",
+           "tool": "PHPUnit",
+           "buildStatus": "success",
+           "rel": {
+               "self": "url..",
+               "html": "url...",
+               "htmlDetailed": "url..."
+           }
+        },
+        {
+           "id": "...",
+           "tool": "PHP CodeSniffer",
+           "buildStatus": "success",
+           "rel": {
+               "self": "url..",
+               "html": "url...",
+               "htmlDetailed": "url..."
+           }
+        }
+     ],
+     "buildStatus": "success",
+     "processStatus": "completed",
+     "created": "db timestamp"
+  }
