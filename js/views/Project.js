@@ -9,7 +9,7 @@
 define(['backbone', 'underscore', 'jquery', 'text!templates/Project.html'],
 function(Backbone, _, $, projectTemplate) {
     var ProjectView = Backbone.View.extend({
-        tagName: 'li',
+        tagName: 'tr',
         className: 'project',
 
 

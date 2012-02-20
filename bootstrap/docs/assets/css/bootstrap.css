@@ -3680,15 +3680,11 @@ a.thumbnail:hover {
 .invisible {
   visibility: hidden;
 }
-li.project {
-  list-style: none;
+tr.project {
   cursor: pointer;
-  margin: 10px 0;
 }
 .projectStatus {
   display: inline-block;
-  margin-left: 15px;
-  vertical-align: bottom;
 }
 .projectStatus.success {
   background-color: #008000;
