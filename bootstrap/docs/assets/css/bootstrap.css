@@ -3707,9 +3707,21 @@ tr.project {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  padding: 10px;
   margin: 20px;
 }
+#plugins div h1 {
+  color: #eeeeee;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #049cdb;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
 #plugins div p {
+  padding: 0 10px;
   text-shadow: 2px 2px 2px #999999;
 }

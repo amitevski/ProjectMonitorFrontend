@@ -1,5 +1,5 @@
 <h1>PHP Unit Plugin</h1>
 <% for (var key in data) {
-        print('<p>' + key + ': ' + data[key] +'</p>');
+        print('<p>' + this.escape(key) + ': ' + this.escape(data[key]) +'</p>');
     }
 %>

@@ -77,7 +77,6 @@ function(Backbone, _, $, projects, plugins, projectListView, detailProjectview) 
         loadProjectDetail: function(projectId, revisionid) {
             this.preHook();
             plugins.fetch({data: {id: projectId, revision: revisionid}});
-            console.log('load revision '+ revisionid + ' for project ' + projectId);
         }
     });
     return AppRouter;
