@@ -12,9 +12,8 @@ define(['backbone',
         'collections/Projects',
         'collections/Plugins',
         'views/ProjectList',
-        'views/DetailProject',
-        'views/PHPUnitPlugin'],
-function(Backbone, _, $, projects, plugins, projectListView, detailProjectview, phpunitPluginView) {
+        'views/DetailProject'],
+function(Backbone, _, $, projects, plugins, projectListView, detailProjectview) {
     var AppRouter = Backbone.Router.extend({
 
         routes: {
@@ -26,14 +25,24 @@ function(Backbone, _, $, projects, plugins, projectListView, detailProjectview, 
         },
 
         /**
+         * hook executed before every route is executed
+         */
+        preHook: function() {
+            projectListView.unrender();
+            detailProjectview.unrender();
+        },
+
+        /**
          * route for default URL
          */
         home: function() {
+            this.preHook();
             //redirect to first page of projectList as default
             window.location.hash = 'projects/page/1';
         },
 
         loadProjectList: function() {
+            this.preHook();
             //we only need to fetch the projects
             //in projectListView the bind event on reset
             //will trigger a render
@@ -44,6 +53,7 @@ function(Backbone, _, $, projects, plugins, projectListView, detailProjectview, 
          * load the project list by page
          */
         loadProjectListPage: function(page) {
+            this.preHook();
             //we only need to fetch the projects
             //in projectListView the bind event on reset
             //will trigger a render
@@ -55,7 +65,7 @@ function(Backbone, _, $, projects, plugins, projectListView, detailProjectview, 
          * @param int projectId
          */
         loadProject: function(projectId) {
-            projectListView.unrender();
+            this.preHook();
         },
 
         /**
@@ -65,7 +75,7 @@ function(Backbone, _, $, projects, plugins, projectListView, detailProjectview, 
          * @param int revisionid
          */
         loadProjectDetail: function(projectId, revisionid) {
-            projectListView.unrender();
+            this.preHook();
             plugins.fetch({data: {id: projectId, revision: revisionid}});
             console.log('load revision '+ revisionid + ' for project ' + projectId);
         }

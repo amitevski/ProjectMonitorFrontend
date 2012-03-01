@@ -8,10 +8,15 @@
         {
            "id": "...",
            "tool": "PHPUnit",
+           "data": {
+               "Success": "4",
+               "Fail"   : "0",
+               "Total"  : "4"
+           },
            "buildStatus": "success",
            "rel": {
-               "self": "url..",
-               "html": "url...",
+               "self"        : "url..",
+               "html"        : "url...",
                "htmlDetailed": "url..."
            }
         },
@@ -20,8 +25,8 @@
            "tool": "PHP CodeSniffer",
            "buildStatus": "success",
            "rel": {
-               "self": "url..",
-               "html": "url...",
+               "self"        : "url..",
+               "html"        : "url...",
                "htmlDetailed": "url..."
            }
         }
