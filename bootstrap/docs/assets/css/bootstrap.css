@@ -3701,9 +3701,9 @@ tr.project {
   width: 20px;
 }
 #plugins div {
-  -webkit-box-shadow: 0 0 5px 5px #888888;
-  -moz-box-shadow: 0 0 5px 5px #888888;
-  box-shadow: 0 0 5px 5px #888888;
+  -webkit-box-shadow: 0 0 4px 4px #555555;
+  -moz-box-shadow: 0 0 4px 4px #555555;
+  box-shadow: 0 0 4px 4px #555555;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -3711,5 +3711,5 @@ tr.project {
   margin: 20px;
 }
 #plugins div p {
-  text-shadow: 2px 2px 2px LightGrey;
+  text-shadow: 2px 2px 2px #999999;
 }
