@@ -10,7 +10,10 @@ define(['backbone', 'underscore', 'models/Project'],
 function(Backbone, _, projectModel) {
     var projects = Backbone.Collection.extend({
         model: projectModel,
-        url: 'fixtures/projects.json' //@todo: needs to be replaced with real url
+        url: 'fixtures/projects.json', //@todo: needs to be replaced with real url
+        parse: function(response) {
+            return response.projects;
+        }
     });
 
     return new projects;
