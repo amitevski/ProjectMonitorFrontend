@@ -3700,3 +3700,16 @@ tr.project {
   -webkit-border-radius: 10px;
   width: 20px;
 }
+#plugins div {
+  -webkit-box-shadow: 0 0 5px 5px #888888;
+  -moz-box-shadow: 0 0 5px 5px #888888;
+  box-shadow: 0 0 5px 5px #888888;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px;
+}
+#plugins div p {
+  text-shadow: 2px 2px 2px LightGrey;
+}
