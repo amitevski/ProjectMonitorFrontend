@@ -9,8 +9,12 @@
 
 define(['backbone', 'underscore'], function(Backbone, _) {
     var AbstractPluginModel = Backbone.Model.extend({
-        getToolName: function() {
-            return this.get('tool').replace(/ /g,"").toLowerCase();
+
+        /**
+         * return the name of the plugin file for the current module
+         */
+        getToolFileName: function() {
+            return this.get('tool').replace(/ /g,"") + 'Plugin';
         }
     });
 

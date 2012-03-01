@@ -5,18 +5,15 @@
  * Time: 12:23
  * aco.mitevski@mayflower.de
  */
-define(['backbone',
+define(['require',
+        'backbone',
         'underscore',
         'jquery',
-        'views/PHPUnitPlugin',
-        'views/PHPCodeSnifferPlugin',
         'collections/Plugins'],
 
-function(Backbone, _, $, phpunit, phpcodesniffer, plugins) {
+function(require, Backbone, _, $, plugins) {
     var PluginListView = Backbone.View.extend({
         el: $('#plugins'),
-        pluginViews: {'phpunit'       : phpunit,
-                      'phpcodesniffer': phpcodesniffer},
 
         collection: null,
 
@@ -25,7 +22,6 @@ function(Backbone, _, $, phpunit, phpcodesniffer, plugins) {
             plugins.bind('refresh', this.render);
             plugins.bind('add', this.render);
             plugins.bind('reset', this.render);
-            //plugins.bind('change', this.render);
         },
 
         /**
@@ -37,13 +33,15 @@ function(Backbone, _, $, phpunit, phpcodesniffer, plugins) {
 
         /**
          * append one plugin
-         * @param object plugin
+         * @param plugin object
          */
         appendPlugin: function(plugin) {
-            var pluginView = plugin.getToolName();
-            var view = new this.pluginViews[pluginView]({model: plugin});
-            var el = view.render().el;
-            this.el.append(el);
+            require(['views/' + plugin.getToolFileName()],
+                _.bind(function(pluginView){
+                    var view = new pluginView({model: plugin});
+                    var el = view.render().el;
+                    this.el.append(el);
+            }, this));
         },
 
         render: function () {

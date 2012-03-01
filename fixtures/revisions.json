@@ -23,6 +23,9 @@
         {
            "id": "...",
            "tool": "PHP CodeSniffer",
+           "data": {
+               "Violations": "200"
+           },
            "buildStatus": "success",
            "rel": {
                "self"        : "url..",
