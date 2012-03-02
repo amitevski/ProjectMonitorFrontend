@@ -7,7 +7,8 @@
  */
 define(['backbone', 'underscore'], function(Backbone, _) {
     var DetailPluginModel = Backbone.Model.extend({
-        urlRoot: 'fixtures/qualityReports.json'
+        //@todo replace with real urlRoot
+        urlRoot: 'fixtures/qualityReports/1.json'
     });
     return new DetailPluginModel;
 });

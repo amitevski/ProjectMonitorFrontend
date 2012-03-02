@@ -10,7 +10,8 @@ define(['backbone', 'underscore', 'models/AbstractPlugin'],
 function(Backbone, _, pluginModel) {
     var plugins = Backbone.Collection.extend({
         model: pluginModel,
-        url: 'fixtures/revisions.json',
+        //@todo replace with real url
+        url: 'fixtures/projects/1/revisions/17.json',
 
         parse: function(response) {
             return response.qualityReports;

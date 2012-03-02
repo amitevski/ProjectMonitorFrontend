@@ -11,18 +11,22 @@ define(['backbone',
         'jquery',
         'collections/Projects',
         'collections/Plugins',
+        'collections/Revisions',
         'models/DetailPlugin',
         'views/ProjectList',
         'views/DetailProject',
+        'views/Revisions',
         'views/DetailPlugin'],
 function(Backbone,
          _,
          $,
          projects,
          plugins,
+         revisions,
          detailPlugin,
          projectListView,
          detailProjectview,
+         revisionListView,
          detailPluginView)
 {
     var AppRouter = Backbone.Router.extend({
@@ -43,6 +47,7 @@ function(Backbone,
             projectListView.unrender();
             detailProjectview.unrender();
             detailPluginView.unrender();
+            revisionListView.unrender();
         },
 
         /**
@@ -90,6 +95,7 @@ function(Backbone,
         loadProjectDetail: function(projectId, revisionid) {
             this.preHook();
             plugins.fetch({data: {id: projectId, revision: revisionid}});
+            revisions.fetch({data: {id: projectId, revision: revisionid}});
         },
 
         /**
