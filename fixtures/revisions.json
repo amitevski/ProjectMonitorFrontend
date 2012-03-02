@@ -6,7 +6,7 @@
          "self": "http://projectlist/projects/1/revisions/17"},
      "qualityReports": [
         {
-           "id": "...",
+           "id": "1",
            "tool": "PHPUnit",
            "data": {
                "Success": "4",
@@ -17,11 +17,11 @@
            "rel": {
                "self"        : "url..",
                "html"        : "url...",
-               "htmlDetailed": "url..."
+               "htmlDetailed": "#qualityReports/1"
            }
         },
         {
-           "id": "...",
+           "id": "2",
            "tool": "PHP CodeSniffer",
            "data": {
                "Violations": "200"
@@ -30,7 +30,7 @@
            "rel": {
                "self"        : "url..",
                "html"        : "url...",
-               "htmlDetailed": "url..."
+               "htmlDetailed": "#qualityReports/2"
            }
         }
      ],

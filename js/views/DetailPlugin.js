@@ -1,25 +1,27 @@
 /**
  * Created by JetBrains PhpStorm.
  * User: amitevski
- * Date: 20.02.12
- * Time: 12:24
+ * Date: 02.03.12
+ * Time: 09:27
  * aco.mitevski@mayflower.de
  */
-define(['backbone', 'underscore'], function(Backbone, _) {
-    var AbstractPluginView = Backbone.View.extend({
-        tagName     : 'div',
-        className   : 'span3 plugin-div',
-        templateHTML: '<span>Abstract Plugin</span>',
+define(['backbone', 'underscore', 'jquery', 'models/DetailPlugin', 'text!templates/DetailPlugin.html'],
+function(Backbone, _, $, detailPluginModel, templateHTML)
+{
+    var DetailPluginView = Backbone.View.extend({
+        tagName  : 'div',
+        className: 'span8',
+        model    : detailPluginModel,
 
         initialize: function() {
             _.bindAll(this, 'render', 'unrender');
             this.model.bind('change', this.render);
             this.model.view = this;
-            this.template = _.template(this.templateHTML);
+            this.template = _.template(templateHTML);
         },
 
         /**
-         * unrender a single plugin
+         * unrender
          */
         unrender: function() {
             $(this.model.el).remove();
@@ -35,9 +37,9 @@ define(['backbone', 'underscore'], function(Backbone, _) {
             var el = $(this.el);
             el.html(this.template(model));
             this.model.el = el;
+            $('#htmlDetails').append(this.model.el);
             return this;
         }
     });
-
-    return AbstractPluginView;
+    return new DetailPluginView;
 });

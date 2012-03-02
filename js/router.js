@@ -11,17 +11,29 @@ define(['backbone',
         'jquery',
         'collections/Projects',
         'collections/Plugins',
+        'models/DetailPlugin',
         'views/ProjectList',
-        'views/DetailProject'],
-function(Backbone, _, $, projects, plugins, projectListView, detailProjectview) {
+        'views/DetailProject',
+        'views/DetailPlugin'],
+function(Backbone,
+         _,
+         $,
+         projects,
+         plugins,
+         detailPlugin,
+         projectListView,
+         detailProjectview,
+         detailPluginView)
+{
     var AppRouter = Backbone.Router.extend({
 
         routes: {
-                                   '': 'home',
-         'projects/:id/revisions/:id': 'loadProjectDetail',
-                'projects/page/:page': 'loadProjectListPage',
-                           'projects': 'loadProjectList',
-                       'projects/:id': 'loadProject'
+           ''                          : 'home',
+           'projects/:id/revisions/:id': 'loadProjectDetail',
+           'qualityReports/:id'        : 'loadReportDetail',
+           'projects/page/:page'       : 'loadProjectListPage',
+           'projects'                  : 'loadProjectList',
+           'projects/:id'              : 'loadProject'
         },
 
         /**
@@ -30,6 +42,7 @@ function(Backbone, _, $, projects, plugins, projectListView, detailProjectview) 
         preHook: function() {
             projectListView.unrender();
             detailProjectview.unrender();
+            detailPluginView.unrender();
         },
 
         /**
@@ -77,7 +90,21 @@ function(Backbone, _, $, projects, plugins, projectListView, detailProjectview) 
         loadProjectDetail: function(projectId, revisionid) {
             this.preHook();
             plugins.fetch({data: {id: projectId, revision: revisionid}});
+        },
+
+        /**
+         * load the html details of a quality Report
+         *
+         * @param int qualityReportId
+         */
+        loadReportDetail: function(qualityReportId) {
+            this.preHook();
+            //Backbone.model only fires a change event
+            //clear needs to be called if we open the same plugin twice
+            detailPlugin.clear({silent: true});
+            detailPlugin.fetch({data: {id: qualityReportId}});
         }
+
     });
     return AppRouter;
 });
