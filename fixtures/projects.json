@@ -1,7 +1,7 @@
 {
     "rel": {
-        "next": "url..?page+1",
-        "prev": "url..?page-1"
+        "next": "#projects/page/2",
+        "prev": "#projects/page/1"
     },
 
     "projects": [{

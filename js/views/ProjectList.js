@@ -6,8 +6,13 @@
  * aco.mitevski@mayflower.de
  */
 
-define(['backbone', 'underscore', 'jquery', 'views/Project', 'collections/Projects'],
-function(Backbone, _, $, projectView, projects) {
+define(['backbone',
+        'underscore',
+        'jquery',
+        'views/Project',
+        'text!templates/ProjectPager.html',
+        'collections/Projects'],
+function(Backbone, _, $, projectView, pagerTemplate, projects) {
     var ProjectListView = Backbone.View.extend({
         el: $('#projectListTable'),
 
@@ -26,6 +31,7 @@ function(Backbone, _, $, projectView, projects) {
          */
         unrender: function() {
             this.items_element.html("");
+            $('#pager').html("");
             this.el.hide();
         },
 
@@ -43,6 +49,15 @@ function(Backbone, _, $, projectView, projects) {
             this.unrender();
             this.el.show();
             projects.each(this.appendProject);
+            this.renderPager();
+        },
+
+        /**
+         * render the next/prev links
+         */
+        renderPager: function() {
+            var html  = _.template(pagerTemplate);
+            $('#pager').html(html(projects));
         }
     });
 
