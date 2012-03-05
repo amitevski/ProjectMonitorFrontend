@@ -1,0 +1,1 @@
+define(["backbone","underscore","views/AbstractPlugin","text!templates/PHPCodeSnifferPlugin.html"],function(a,b,c,d){var e=c.extend({templateHTML:d});return e})

@@ -1,0 +1,1 @@
+({appDir:"../js",baseUrl:"./",dir:"../buildjs",paths:{jquery:"lib/jquery/jquery-min",underscore:"lib/underscore/underscore-min",backbone:"lib/backbone/backbone-optamd3-min",text:"lib/require/text"},optimize:"uglify",optimizeCss:"standard.keepLines",modules:[{name:"main"}]})

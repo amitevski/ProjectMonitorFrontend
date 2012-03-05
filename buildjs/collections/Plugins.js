@@ -1,0 +1,1 @@
+define(["backbone","underscore","models/AbstractPlugin"],function(a,b,c){var d=a.Collection.extend({model:c,url:"fixtures/projects/1/revisions/17.json",parse:function(a){return a.qualityReports}});return new d})

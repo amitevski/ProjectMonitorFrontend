@@ -1,0 +1,1 @@
+define(["backbone","underscore","models/AbstractPlugin"],function(a,b,c){var d=c.extend({});return d})

@@ -1,0 +1,1 @@
+define(["backbone","underscore","models/Revision"],function(a,b,c){var d=a.Collection.extend({model:c,url:"fixtures/projects/1/revisions.json"});return new d})
