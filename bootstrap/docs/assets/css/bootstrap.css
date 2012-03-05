@@ -3708,10 +3708,7 @@ tr.project {
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin: 20px;
-  height: 170px;
-}
-#plugins div a {
-  margin: 10px;
+  min-height: 170px;
 }
 #plugins div h1 {
   color: #eeeeee;
